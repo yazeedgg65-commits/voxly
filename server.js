@@ -13,7 +13,8 @@ app.use(express.static(__dirname));
 
 let state = {
     posts: [],
-    users: {}
+    users: {},
+    directMessages: {}
 };
 
 function normalizeHandle(raw) {
@@ -22,15 +23,14 @@ function normalizeHandle(raw) {
     return clean.startsWith('@') ? clean : '@' + clean;
 }
 
-function extractHashtags(text) {
-    const matches = String(text || '').match(/#[\p{L}\p{N}_]+/gu) || [];
-    return Array.from(new Set(matches.map(tag => tag.trim())));
+function getConversationKey(handleA, handleB) {
+    const pair = [normalizeHandle(handleA), normalizeHandle(handleB)].sort();
+    return `${pair[0]}__${pair[1]}`;
 }
 
-function calcHashtagViews(hashtags, baseViews = 0) {
-    const tagCount = Array.isArray(hashtags) ? hashtags.length : 0;
-    const hashtagBoost = tagCount * (tagCount + 1) * 45;
-    return Math.max(0, Number(baseViews) || 0) + hashtagBoost;
+function extractHashtags(text) {
+    const matches = String(text || '').match(/#[\p{L}\p{N}_]+/gu) || [];
+    return Array.from(new Set(matches.map(tag => tag.trim().toLowerCase())));
 }
 
 function loadData() {
@@ -42,10 +42,11 @@ function loadData() {
             } else if (raw && typeof raw === 'object') {
                 state.posts = Array.isArray(raw.posts) ? raw.posts : [];
                 state.users = raw.users && typeof raw.users === 'object' ? raw.users : {};
+                state.directMessages = raw.directMessages && typeof raw.directMessages === 'object' ? raw.directMessages : {};
             }
         }
     } catch (e) {
-        state = { posts: [], users: {} };
+        state = { posts: [], users: {}, directMessages: {} };
     }
 }
 
@@ -68,8 +69,8 @@ function ensureUser(handle, author, avatar) {
         if (author && String(author).trim() && String(author).trim() !== 'مستخدم') {
             state.users[h].author = String(author).trim();
         }
-        if (avatar !== undefined) {
-            state.users[h].avatar = avatar || '';
+        if (avatar !== undefined && avatar) {
+            state.users[h].avatar = avatar;
         }
     }
     return state.users[h];
@@ -83,9 +84,6 @@ function enrichPost(post) {
         ? post.hashtags
         : extractHashtags(post.content);
 
-    const rawViews = Math.max(10, Number(post.views) || 120);
-    const totalViews = calcHashtagViews(hashtags, rawViews);
-
     return {
         ...post,
         handle: h,
@@ -95,7 +93,7 @@ function enrichPost(post) {
         verified: followers >= VERIFIED_THRESHOLD,
         isShort: Boolean(post.isShort || post.mediaType === 'video'),
         hashtags,
-        views: totalViews,
+        views: Math.max(0, Number(post.views) || 0),
         hearts: Math.max(0, Number(post.hearts) || 0),
         reposts: Math.max(0, Number(post.reposts) || 0),
         reactions: {
@@ -127,7 +125,7 @@ app.get('/api/stream', (req, res) => {
     res.flushHeaders?.();
 
     const enrichedPosts = state.posts.map(enrichPost);
-    res.write(`data: ${JSON.stringify({ type: 'init', posts: enrichedPosts })}\n\n`);
+    res.write(`data: ${JSON.stringify({ type: 'init', posts: enrichedPosts, users: state.users })}\n\n`);
     sseClients.add(res);
 
     req.on('close', () => {
@@ -152,7 +150,6 @@ app.post('/api/posts', (req, res) => {
     const h = normalizeHandle(handle);
     const user = ensureUser(h, author, avatar);
     const hashtags = extractHashtags(text);
-    const initialViews = calcHashtagViews(hashtags, 150);
 
     const post = enrichPost({
         id: Date.now() + Math.floor(Math.random() * 1000),
@@ -165,7 +162,7 @@ app.post('/api/posts', (req, res) => {
         mediaData: mediaData || null,
         isShort: Boolean(isShort || mediaType === 'video'),
         hashtags,
-        views: initialViews,
+        views: 0,
         votes: 1,
         hearts: 0,
         reposts: 0,
@@ -178,6 +175,16 @@ app.post('/api/posts', (req, res) => {
     saveData();
     broadcastEvent({ type: 'new_post', post });
     res.status(201).json(post);
+});
+
+app.post('/api/posts/:id/view', (req, res) => {
+    const post = state.posts.find(p => String(p.id) === String(req.params.id));
+    if (!post) return res.status(404).json({ error: 'المنشور غير موجود' });
+    post.views = Math.max(0, (Number(post.views) || 0) + 1);
+    const updated = enrichPost(post);
+    saveData();
+    broadcastEvent({ type: 'post_update', post: updated });
+    res.json(updated);
 });
 
 app.post('/api/posts/:id/vote', (req, res) => {
@@ -256,6 +263,25 @@ app.delete('/api/posts/:id', (req, res) => {
     res.json({ ok: true, id: req.params.id });
 });
 
+app.get('/api/users', (req, res) => {
+    const usersMap = new Map();
+    Object.values(state.users || {}).forEach(u => {
+        usersMap.set(normalizeHandle(u.handle), { ...u, handle: normalizeHandle(u.handle) });
+    });
+    state.posts.forEach(p => {
+        const h = normalizeHandle(p.handle);
+        if (!usersMap.has(h)) {
+            usersMap.set(h, {
+                handle: h,
+                author: p.author || 'مستخدم',
+                avatar: p.avatar || '',
+                followers: Math.max(0, Number(p.followers) || 0)
+            });
+        }
+    });
+    res.json(Array.from(usersMap.values()));
+});
+
 app.get('/api/users/:handle', (req, res) => {
     const h = normalizeHandle(decodeURIComponent(req.params.handle || ''));
     const user = ensureUser(h);
@@ -282,6 +308,56 @@ app.post('/api/users/:handle/follow', (req, res) => {
     saveData();
     broadcastEvent({ type: 'follow', handle: h, user });
     res.json({ user });
+});
+
+app.get('/api/dm', (req, res) => {
+    const me = normalizeHandle(req.query.me);
+    const peer = normalizeHandle(req.query.peer);
+    if (!req.query.peer) {
+        const contacts = new Set();
+        Object.keys(state.directMessages || {}).forEach(key => {
+            const parts = key.split('__');
+            if (parts.length === 2) {
+                if (parts[0] === me) contacts.add(parts[1]);
+                if (parts[1] === me) contacts.add(parts[0]);
+            }
+        });
+        return res.json({ contacts: Array.from(contacts) });
+    }
+    const key = getConversationKey(me, peer);
+    const messages = Array.isArray(state.directMessages[key]) ? state.directMessages[key] : [];
+    res.json({ messages });
+});
+
+app.post('/api/dm', (req, res) => {
+    const senderHandle = normalizeHandle(req.body?.senderHandle);
+    const receiverHandle = normalizeHandle(req.body?.receiverHandle);
+    const senderName = String(req.body?.senderName || 'مستخدم').trim() || 'مستخدم';
+    const text = String(req.body?.text || '').trim();
+
+    if (!text || senderHandle === receiverHandle) {
+        return res.status(400).json({ error: 'رسالة غير صالحة' });
+    }
+
+    ensureUser(senderHandle, senderName);
+    ensureUser(receiverHandle);
+
+    const key = getConversationKey(senderHandle, receiverHandle);
+    state.directMessages[key] = Array.isArray(state.directMessages[key]) ? state.directMessages[key] : [];
+
+    const msg = {
+        id: Date.now() + Math.floor(Math.random() * 1000),
+        senderHandle,
+        receiverHandle,
+        senderName,
+        text,
+        timestamp: new Date().toISOString()
+    };
+
+    state.directMessages[key].push(msg);
+    saveData();
+    broadcastEvent({ type: 'dm_message', key, message: msg });
+    res.status(201).json({ message: msg });
 });
 
 app.post('/api/ai', async (req, res) => {
