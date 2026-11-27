@@ -10,14 +10,14 @@
             --bg: #05070c;
             --surface: #0d121c;
             --surface-elevated: #141b29;
-            --surface-glass: rgba(13, 18, 28, 0.88);
+            --surface-glass: rgba(13, 18, 28, 0.9);
             --border: rgba(255, 255, 255, 0.08);
             --border-strong: rgba(255, 255, 255, 0.15);
             --text: #f5f8fc;
             --muted: #8f9bb0;
             --accent: #1d9bf0;
             --accent-soft: rgba(29, 155, 240, 0.14);
-            --accent-glow: rgba(29, 155, 240, 0.28);
+            --accent-glow: rgba(29, 155, 240, 0.25);
             --heart: #f91880;
             --upvote: #ff4500;
             --downvote: #6366f1;
@@ -30,12 +30,12 @@
             --bg: #f1f5f9;
             --surface: #ffffff;
             --surface-elevated: #f8fafc;
-            --surface-glass: rgba(255, 255, 255, 0.92);
+            --surface-glass: rgba(255, 255, 255, 0.94);
             --border: rgba(15, 23, 42, 0.09);
             --border-strong: rgba(15, 23, 42, 0.16);
             --text: #0f172a;
             --muted: #64748b;
-            --accent-glow: rgba(29, 155, 240, 0.18);
+            --accent-glow: rgba(29, 155, 240, 0.16);
         }
 
         * {
@@ -53,7 +53,6 @@
         body {
             background:
                 radial-gradient(circle at 12% 0%, var(--accent-glow), transparent 36%),
-                radial-gradient(circle at 88% 12%, rgba(99, 102, 241, 0.12), transparent 32%),
                 var(--bg);
             color: var(--text);
             min-height: 100vh;
@@ -62,60 +61,60 @@
 
         .app-layout {
             display: grid;
-            grid-template-columns: 248px minmax(0, 740px) 305px;
+            grid-template-columns: 240px minmax(0, 740px) 295px;
             justify-content: center;
-            gap: 20px;
-            max-width: 1360px;
+            gap: 18px;
+            max-width: 1340px;
             margin: 0 auto;
-            padding: 0 14px;
+            padding: 0 12px;
         }
 
         .sidebar-left {
             position: sticky;
             top: 0;
             height: 100vh;
-            padding: 20px 8px;
+            padding: 18px 8px;
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 5px;
         }
 
         .brand {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 8px 14px;
-            margin-bottom: 10px;
+            gap: 10px;
+            padding: 8px 12px;
+            margin-bottom: 8px;
         }
 
         .brand-logo {
-            width: 42px;
-            height: 42px;
-            border-radius: 14px;
+            width: 40px;
+            height: 40px;
+            border-radius: 13px;
             background: linear-gradient(135deg, var(--accent), #6366f1);
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 800;
-            font-size: 1.35rem;
+            font-size: 1.3rem;
             color: #ffffff;
         }
 
         .brand-title {
-            font-size: 1.5rem;
+            font-size: 1.45rem;
             font-weight: 800;
         }
 
         .nav-item {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 11px 16px;
-            border-radius: 14px;
+            gap: 11px;
+            padding: 10px 14px;
+            border-radius: 13px;
             background: transparent;
             border: 1px solid transparent;
             color: var(--text);
-            font-size: 0.98rem;
+            font-size: 0.95rem;
             font-weight: 600;
             cursor: pointer;
             text-align: right;
@@ -128,13 +127,13 @@
         }
 
         .plus-desktop-btn {
-            margin-top: 10px;
+            margin-top: 8px;
             background: linear-gradient(135deg, var(--accent), #2563eb);
             color: #ffffff;
             border: none;
-            padding: 12px 16px;
-            border-radius: 15px;
-            font-size: 1rem;
+            padding: 11px 16px;
+            border-radius: 14px;
+            font-size: 0.98rem;
             font-weight: 800;
             cursor: pointer;
             display: flex;
@@ -162,8 +161,8 @@
             position: sticky;
             top: 0;
             background: var(--surface-glass);
-            backdrop-filter: blur(14px);
-            padding: 11px 16px;
+            backdrop-filter: blur(12px);
+            padding: 10px 14px;
             border-bottom: 1px solid var(--border);
             z-index: 20;
             display: flex;
@@ -181,9 +180,9 @@
 
         .mode-switch-bar {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px;
-            padding: 10px 16px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 7px;
+            padding: 9px 14px;
             background: var(--bg);
             border-bottom: 1px solid var(--border);
         }
@@ -192,15 +191,15 @@
             background: var(--surface);
             border: 1px solid var(--border);
             color: var(--text);
-            padding: 9px 12px;
-            border-radius: 12px;
-            font-size: 0.9rem;
+            padding: 8px 10px;
+            border-radius: 11px;
+            font-size: 0.85rem;
             font-weight: 800;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            gap: 5px;
         }
 
         .mode-tab-btn.active {
@@ -219,7 +218,7 @@
             display: inline-flex;
             align-items: center;
             gap: 5px;
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-weight: 700;
             color: var(--success);
             background: rgba(16, 185, 129, 0.12);
@@ -238,13 +237,13 @@
         .active-tag-chip {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
             background: var(--accent-soft);
             color: var(--accent);
             border: 1px solid rgba(29, 155, 240, 0.35);
-            padding: 2px 10px;
+            padding: 2px 9px;
             border-radius: 999px;
-            font-size: 0.75rem;
+            font-size: 0.74rem;
             font-weight: 800;
             cursor: pointer;
         }
@@ -253,12 +252,12 @@
             display: inline-flex;
             align-items: center;
             gap: 4px;
-            background: rgba(29, 155, 240, 0.16);
-            color: #bae6fd;
+            background: rgba(29, 155, 240, 0.2);
+            color: #e0f2fe;
             border: 1px solid rgba(125, 211, 252, 0.35);
-            padding: 2px 9px;
+            padding: 2px 8px;
             border-radius: 999px;
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-weight: 800;
         }
 
@@ -293,11 +292,11 @@
             background: var(--bg);
             border: 1px solid var(--border);
             border-radius: 999px;
-            padding: 5px 12px;
+            padding: 5px 11px;
             display: flex;
             align-items: center;
             gap: 6px;
-            width: 170px;
+            width: 165px;
             min-width: 0;
         }
 
@@ -307,14 +306,14 @@
             color: var(--text);
             outline: none;
             width: 100%;
-            font-size: 0.84rem;
+            font-size: 0.83rem;
             min-width: 0;
         }
 
         .communities-bar {
             display: flex;
-            gap: 7px;
-            padding: 9px 16px;
+            gap: 6px;
+            padding: 8px 14px;
             border-bottom: 1px solid var(--border);
             overflow-x: auto;
             background: var(--surface);
@@ -324,9 +323,9 @@
             background: var(--bg);
             border: 1px solid var(--border);
             color: var(--text);
-            padding: 4px 13px;
+            padding: 4px 12px;
             border-radius: 999px;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 700;
             cursor: pointer;
             white-space: nowrap;
@@ -339,7 +338,7 @@
         }
 
         .composer {
-            padding: 14px 16px;
+            padding: 13px 14px;
             border-bottom: 1px solid var(--border);
             background: var(--surface);
         }
@@ -351,8 +350,8 @@
         }
 
         .avatar-img, .avatar-fallback {
-            width: 42px;
-            height: 42px;
+            width: 40px;
+            height: 40px;
             border-radius: 999px;
             object-fit: cover;
             flex-shrink: 0;
@@ -366,7 +365,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .composer textarea {
@@ -374,10 +373,10 @@
             background: transparent;
             border: none;
             color: var(--text);
-            font-size: 0.98rem;
+            font-size: 0.96rem;
             resize: none;
             outline: none;
-            min-height: 62px;
+            min-height: 58px;
             margin-bottom: 6px;
             line-height: 1.55;
             min-width: 0;
@@ -401,7 +400,7 @@
         .media-preview video {
             display: block;
             width: 100%;
-            max-height: 290px;
+            max-height: 280px;
             object-fit: contain;
         }
 
@@ -424,7 +423,7 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 8px;
-            padding-top: 10px;
+            padding-top: 9px;
             border-top: 1px solid var(--border);
         }
 
@@ -439,7 +438,7 @@
             background: var(--bg);
             color: var(--text);
             border: 1px solid var(--border);
-            padding: 6px 11px;
+            padding: 6px 10px;
             border-radius: 11px;
             font-size: 0.82rem;
             outline: none;
@@ -455,9 +454,9 @@
             background: var(--bg);
             border: 1px solid var(--border);
             color: var(--text);
-            padding: 5px 11px;
+            padding: 5px 10px;
             border-radius: 10px;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 700;
             cursor: pointer;
         }
@@ -481,9 +480,9 @@
             background: var(--accent-soft);
             color: var(--accent);
             border: 1px solid rgba(29, 155, 240, 0.3);
-            padding: 5px 11px;
+            padding: 5px 10px;
             border-radius: 10px;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 700;
             cursor: pointer;
             display: inline-flex;
@@ -495,9 +494,9 @@
             background: rgba(244, 63, 94, 0.12);
             color: var(--short-accent);
             border: 1px solid rgba(244, 63, 94, 0.35);
-            padding: 5px 11px;
+            padding: 5px 10px;
             border-radius: 10px;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 800;
             cursor: pointer;
         }
@@ -512,24 +511,24 @@
             background: linear-gradient(135deg, var(--accent), #2563eb);
             color: #ffffff;
             border: none;
-            padding: 7px 19px;
+            padding: 7px 18px;
             border-radius: 999px;
             font-weight: 700;
-            font-size: 0.86rem;
+            font-size: 0.85rem;
             cursor: pointer;
         }
 
         .shorts-stage {
-            padding: 16px;
+            padding: 14px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 14px;
+            gap: 12px;
         }
 
         .shorts-workspace {
             display: grid;
-            grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+            grid-template-columns: minmax(0, 350px) minmax(0, 1fr);
             gap: 14px;
             width: 100%;
             align-items: start;
@@ -538,8 +537,8 @@
         .shorts-player-shell {
             position: relative;
             width: 100%;
-            aspect-ratio: 9 / 12;
-            border-radius: 20px;
+            aspect-ratio: 9 / 13;
+            border-radius: 18px;
             overflow: hidden;
             background: #04060a;
             border: 1px solid var(--border-strong);
@@ -562,7 +561,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 18px;
             text-align: center;
             background: linear-gradient(160deg, rgba(244, 63, 94, 0.24), rgba(29, 155, 240, 0.14), #070b12 80%);
         }
@@ -572,49 +571,49 @@
             top: 0;
             left: 0;
             right: 0;
-            padding: 10px 12px;
+            padding: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
             flex-wrap: wrap;
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), transparent);
             z-index: 4;
         }
 
         .shorts-counter-pill {
-            background: rgba(0, 0, 0, 0.72);
+            background: rgba(0, 0, 0, 0.75);
             color: #ffffff;
             border: 1px solid rgba(255, 255, 255, 0.18);
-            padding: 3px 10px;
+            padding: 2px 9px;
             border-radius: 999px;
-            font-size: 0.74rem;
+            font-size: 0.72rem;
             font-weight: 800;
         }
 
         .shorts-side-actions {
             position: absolute;
-            left: 10px;
-            bottom: 84px;
+            left: 8px;
+            bottom: 78px;
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 7px;
             z-index: 4;
         }
 
         .short-rail-btn {
-            min-width: 44px;
-            height: 44px;
-            padding: 0 8px;
+            min-width: 42px;
+            height: 42px;
+            padding: 0 7px;
             border-radius: 999px;
             border: 1px solid rgba(255, 255, 255, 0.22);
-            background: rgba(15, 23, 42, 0.82);
+            background: rgba(15, 23, 42, 0.85);
             color: #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-weight: 800;
             cursor: pointer;
         }
@@ -628,8 +627,8 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            right: 60px;
-            padding: 14px 12px 12px;
+            right: 54px;
+            padding: 12px 10px;
             background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.35) 75%, transparent);
             color: #ffffff;
             z-index: 4;
@@ -638,23 +637,23 @@
         .short-comments-panel {
             background: var(--bg);
             border: 1px solid var(--border-strong);
-            border-radius: 20px;
-            padding: 14px;
+            border-radius: 18px;
+            padding: 12px;
             display: flex;
             flex-direction: column;
-            min-height: 440px;
-            max-height: 540px;
+            min-height: 360px;
+            max-height: 480px;
         }
 
         .short-comments-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-bottom: 10px;
+            padding-bottom: 8px;
             border-bottom: 1px solid var(--border);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 800;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
         }
 
         .short-comments-list {
@@ -662,24 +661,24 @@
             overflow-y: auto;
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 7px;
             padding-left: 4px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .short-comment-item {
             background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 9px 11px;
-            font-size: 0.85rem;
+            border-radius: 11px;
+            padding: 8px 10px;
+            font-size: 0.83rem;
         }
 
         .shorts-nav-bar {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             width: 100%;
         }
 
@@ -689,9 +688,9 @@
             background: var(--bg);
             border: 1px solid var(--border-strong);
             color: var(--text);
-            padding: 9px 14px;
-            border-radius: 14px;
-            font-size: 0.86rem;
+            padding: 9px 12px;
+            border-radius: 13px;
+            font-size: 0.84rem;
             font-weight: 800;
             cursor: pointer;
         }
@@ -709,22 +708,114 @@
 
         .no-more-shorts-card {
             width: 100%;
-            max-width: 440px;
-            padding: 36px 20px;
-            border-radius: 22px;
+            max-width: 420px;
+            padding: 32px 18px;
+            border-radius: 20px;
             background: var(--bg);
             border: 1px solid var(--border-strong);
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
+            gap: 10px;
+        }
+
+        .dm-stage {
+            padding: 14px;
+            display: grid;
+            grid-template-columns: 230px minmax(0, 1fr);
             gap: 12px;
+            min-height: 520px;
+        }
+
+        .dm-contacts-box {
+            background: var(--bg);
+            border: 1px solid var(--border-strong);
+            border-radius: 16px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            max-height: 560px;
+            overflow-y: auto;
+        }
+
+        .dm-contact-btn {
+            width: 100%;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 10px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-align: right;
+            cursor: pointer;
+            font-size: 0.84rem;
+        }
+
+        .dm-contact-btn.active {
+            border-color: var(--accent);
+            background: var(--accent-soft);
+        }
+
+        .dm-chat-box {
+            background: var(--bg);
+            border: 1px solid var(--border-strong);
+            border-radius: 16px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            height: 560px;
+        }
+
+        .dm-messages-area {
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 6px 2px 10px;
+        }
+
+        .dm-msg-row {
+            display: flex;
+            flex-direction: column;
+            max-width: 82%;
+        }
+
+        .dm-msg-row.mine {
+            align-self: flex-start;
+        }
+
+        .dm-msg-row.theirs {
+            align-self: flex-end;
+        }
+
+        .dm-bubble {
+            padding: 8px 12px;
+            border-radius: 14px;
+            font-size: 0.86rem;
+            line-height: 1.5;
+            word-break: break-word;
+        }
+
+        .dm-msg-row.mine .dm-bubble {
+            background: var(--accent);
+            color: #ffffff;
+        }
+
+        .dm-msg-row.theirs .dm-bubble {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
         }
 
         .post-card {
             display: flex;
             gap: 10px;
-            padding: 15px 16px;
+            padding: 14px;
             border-bottom: 1px solid var(--border);
             background: var(--surface);
         }
@@ -739,8 +830,8 @@
             align-items: center;
             gap: 2px;
             background: var(--bg);
-            padding: 6px 5px;
-            border-radius: 12px;
+            padding: 5px;
+            border-radius: 11px;
             height: fit-content;
             border: 1px solid var(--border);
             flex-shrink: 0;
@@ -751,13 +842,13 @@
             border: none;
             color: var(--muted);
             cursor: pointer;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             line-height: 1.2;
         }
 
         .vote-btn.up:hover { color: var(--upvote); }
         .vote-btn.down:hover { color: var(--downvote); }
-        .vote-score { font-weight: 800; font-size: 0.82rem; }
+        .vote-score { font-weight: 800; font-size: 0.8rem; }
 
         .post-main {
             flex: 1;
@@ -812,7 +903,7 @@
         }
 
         .followers-chip, .views-chip {
-            font-size: 0.73rem;
+            font-size: 0.72rem;
             font-weight: 700;
             color: var(--muted);
             background: var(--bg);
@@ -824,7 +915,7 @@
         .comm-tag {
             background: var(--accent-soft);
             color: var(--accent);
-            padding: 2px 9px;
+            padding: 2px 8px;
             border-radius: 999px;
             font-size: 0.72rem;
             font-weight: 700;
@@ -835,7 +926,7 @@
             background: rgba(244, 63, 94, 0.16);
             color: var(--short-accent);
             border: 1px solid rgba(244, 63, 94, 0.35);
-            padding: 2px 9px;
+            padding: 2px 8px;
             border-radius: 999px;
             font-size: 0.72rem;
             font-weight: 800;
@@ -843,11 +934,11 @@
         }
 
         .post-text {
-            line-height: 1.62;
+            line-height: 1.6;
             margin-bottom: 10px;
             white-space: pre-wrap;
             word-wrap: break-word;
-            font-size: 0.94rem;
+            font-size: 0.93rem;
         }
 
         .hashtag-link {
@@ -876,7 +967,7 @@
         .post-media video {
             display: block;
             width: 100%;
-            max-height: 380px;
+            max-height: 360px;
             object-fit: cover;
         }
 
@@ -897,7 +988,7 @@
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 6px;
-            padding-top: 9px;
+            padding-top: 8px;
             border-top: 1px solid var(--border);
         }
 
@@ -912,9 +1003,9 @@
             background: var(--bg);
             border: 1px solid var(--border);
             color: var(--text);
-            padding: 4px 10px;
+            padding: 4px 9px;
             border-radius: 999px;
-            font-size: 0.78rem;
+            font-size: 0.77rem;
             font-weight: 600;
             cursor: pointer;
             display: inline-flex;
@@ -933,7 +1024,7 @@
             color: var(--heart);
             padding: 4px 10px;
             border-radius: 999px;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 700;
             cursor: pointer;
             display: inline-flex;
@@ -962,43 +1053,43 @@
             padding: 8px 11px;
             border-radius: 10px;
             margin-bottom: 6px;
-            font-size: 0.84rem;
+            font-size: 0.83rem;
         }
 
         .sidebar-right {
             position: sticky;
             top: 0;
             height: 100vh;
-            padding: 20px 6px;
+            padding: 18px 6px;
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 12px;
             overflow-y: auto;
         }
 
         .widget-card {
             background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: 18px;
-            padding: 16px;
+            border-radius: 16px;
+            padding: 14px;
         }
 
         .ad-card {
             background: linear-gradient(145deg, rgba(29, 155, 240, 0.16), rgba(99, 102, 241, 0.14));
             border: 1px solid rgba(29, 155, 240, 0.35);
-            border-radius: 18px;
-            padding: 16px;
+            border-radius: 16px;
+            padding: 14px;
         }
 
         .ad-pill {
             display: inline-block;
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             font-weight: 800;
             color: var(--accent);
             background: var(--accent-soft);
             padding: 2px 8px;
             border-radius: 999px;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .hashtag-cloud {
@@ -1014,7 +1105,7 @@
             color: var(--text);
             padding: 4px 10px;
             border-radius: 999px;
-            font-size: 0.78rem;
+            font-size: 0.76rem;
             font-weight: 700;
             cursor: pointer;
         }
@@ -1026,9 +1117,9 @@
         }
 
         .widget-title {
-            font-size: 0.96rem;
+            font-size: 0.94rem;
             font-weight: 800;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -1042,7 +1133,7 @@
             position: fixed;
             inset: 0;
             background: rgba(0, 0, 0, 0.78);
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(6px);
             display: none;
             align-items: center;
             justify-content: center;
@@ -1055,19 +1146,19 @@
         .modal-box {
             background: var(--surface);
             border: 1px solid var(--border-strong);
-            border-radius: 22px;
+            border-radius: 20px;
             width: 100%;
-            max-width: 580px;
+            max-width: 560px;
             max-height: 90vh;
             overflow-y: auto;
-            padding: 18px;
+            padding: 16px;
         }
 
         .profile-banner {
-            height: 84px;
-            border-radius: 16px;
+            height: 80px;
+            border-radius: 15px;
             background: linear-gradient(135deg, var(--accent), #6366f1, #ec4899);
-            margin-bottom: -34px;
+            margin-bottom: -32px;
         }
 
         .profile-top-row {
@@ -1081,8 +1172,8 @@
         }
 
         .profile-avatar-lg {
-            width: 64px;
-            height: 64px;
+            width: 62px;
+            height: 62px;
             border-radius: 999px;
             border: 3px solid var(--surface);
             object-fit: cover;
@@ -1091,7 +1182,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.45rem;
+            font-size: 1.4rem;
             font-weight: 800;
         }
 
@@ -1099,16 +1190,16 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 8px;
-            margin: 12px 0;
+            margin: 10px 0;
         }
 
         .profile-tab-btn {
             background: var(--bg);
             border: 1px solid var(--border);
             color: var(--text);
-            padding: 8px 12px;
-            border-radius: 12px;
-            font-size: 0.85rem;
+            padding: 8px 10px;
+            border-radius: 11px;
+            font-size: 0.84rem;
             font-weight: 800;
             cursor: pointer;
         }
@@ -1123,10 +1214,10 @@
             background: linear-gradient(135deg, var(--accent), #2563eb);
             color: #ffffff;
             border: none;
-            padding: 7px 17px;
+            padding: 6px 15px;
             border-radius: 999px;
             font-weight: 800;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             cursor: pointer;
         }
 
@@ -1147,14 +1238,14 @@
             background: var(--bg);
             border: 1px solid var(--border);
             color: var(--text);
-            border-radius: 14px;
-            padding: 14px 8px;
+            border-radius: 13px;
+            padding: 13px 6px;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 6px;
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             cursor: pointer;
         }
 
@@ -1194,14 +1285,14 @@
             justify-content: space-between;
             align-items: center;
             gap: 10px;
-            padding: 11px 0;
+            padding: 10px 0;
             border-bottom: 1px solid var(--border);
             flex-wrap: wrap;
         }
 
         .api-help-link {
             color: var(--accent);
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             text-decoration: underline;
             word-break: break-all;
         }
@@ -1238,40 +1329,45 @@
         input:checked + .slider:before { transform: translateX(20px); }
 
         @media (max-width: 1050px) {
-            .app-layout { grid-template-columns: 76px minmax(0, 740px); }
+            .app-layout { grid-template-columns: 72px minmax(0, 740px); }
             .sidebar-right { display: none; }
             .nav-text, .brand-title { display: none; }
         }
 
         @media (max-width: 780px) {
             .shorts-workspace { grid-template-columns: 1fr; }
-            .shorts-player-shell { max-width: 360px; margin: 0 auto; }
-            .short-comments-panel { min-height: 280px; max-height: 360px; }
+            .shorts-player-shell { max-width: 340px; margin: 0 auto; aspect-ratio: 9 / 12.5; }
+            .short-comments-panel { min-height: 240px; max-height: 320px; }
+            .dm-stage { grid-template-columns: 1fr; min-height: auto; }
+            .dm-contacts-box { max-height: 150px; }
+            .dm-chat-box { height: 420px; }
         }
 
         @media (max-width: 680px) {
             .app-layout { grid-template-columns: 1fr; padding: 0; gap: 0; }
             .sidebar-left { display: none; }
-            .main-feed { border-left: none; border-right: none; padding-bottom: 72px; }
-            .top-header { padding: 9px 10px; gap: 6px; }
-            .top-header h2 { font-size: 0.96rem !important; white-space: nowrap; }
-            .live-pill { padding: 2px 6px; font-size: 0.66rem; }
+            .main-feed { border-left: none; border-right: none; padding-bottom: 68px; }
+            .top-header { padding: 8px 10px; gap: 5px; }
+            .top-header h2 { font-size: 0.94rem !important; white-space: nowrap; }
+            .live-pill { padding: 2px 6px; font-size: 0.64rem; }
+            .mode-switch-bar { padding: 7px 10px; gap: 5px; }
+            .mode-tab-btn { padding: 7px 6px; font-size: 0.76rem; }
             .header-actions { gap: 4px; }
-            .search-box { width: 92px; padding: 4px 8px; }
-            .search-box input { font-size: 0.78rem; }
-            .icon-btn { width: 30px; height: 30px; }
-            .icon-btn .icon-svg { width: 16px; height: 16px; }
-            .communities-bar { padding: 8px 10px; gap: 5px; }
-            .comm-pill { padding: 4px 10px; font-size: 0.76rem; }
-            .composer { padding: 11px 10px; }
-            .avatar-img, .avatar-fallback { width: 34px; height: 34px; font-size: 0.88rem; }
-            .composer textarea { font-size: 0.92rem; min-height: 54px; }
-            .post-card { padding: 11px 10px; gap: 7px; }
-            .vote-col { padding: 4px; }
-            .vote-score { font-size: 0.76rem; }
-            .post-text { font-size: 0.88rem; }
-            .react-pill, .heart-pill { padding: 3px 8px; font-size: 0.74rem; }
-            .btn-publish { padding: 6px 14px; font-size: 0.8rem; }
+            .search-box { width: 84px; padding: 4px 7px; }
+            .search-box input { font-size: 0.76rem; }
+            .icon-btn { width: 29px; height: 29px; }
+            .icon-btn .icon-svg { width: 15px; height: 15px; }
+            .communities-bar { padding: 7px 10px; gap: 5px; }
+            .comm-pill { padding: 3px 9px; font-size: 0.74rem; }
+            .composer { padding: 10px; }
+            .avatar-img, .avatar-fallback { width: 32px; height: 32px; font-size: 0.84rem; }
+            .composer textarea { font-size: 0.9rem; min-height: 50px; }
+            .post-card { padding: 10px; gap: 6px; }
+            .vote-col { padding: 3px; }
+            .vote-score { font-size: 0.74rem; }
+            .post-text { font-size: 0.86rem; }
+            .react-pill, .heart-pill { padding: 3px 7px; font-size: 0.72rem; }
+            .btn-publish { padding: 6px 12px; font-size: 0.78rem; }
 
             .mobile-bottom-bar {
                 display: flex;
@@ -1279,14 +1375,14 @@
                 bottom: 0;
                 left: 0;
                 right: 0;
-                height: 56px;
+                height: 54px;
                 background: var(--surface-glass);
-                backdrop-filter: blur(14px);
+                backdrop-filter: blur(12px);
                 border-top: 1px solid var(--border);
                 justify-content: space-around;
                 align-items: center;
                 z-index: 60;
-                padding: 0 4px;
+                padding: 0 2px;
             }
 
             .mobile-bar-btn {
@@ -1298,27 +1394,27 @@
                 align-items: center;
                 justify-content: center;
                 gap: 1px;
-                font-size: 0.66rem;
+                font-size: 0.62rem;
                 font-weight: 700;
                 cursor: pointer;
-                padding: 3px 4px;
-                border-radius: 10px;
+                padding: 2px 3px;
+                border-radius: 9px;
                 min-width: 0;
             }
 
             .mobile-bar-btn .icon-svg {
-                width: 18px;
-                height: 18px;
+                width: 17px;
+                height: 17px;
             }
 
             .mobile-plus-btn {
                 background: linear-gradient(135deg, var(--accent), #2563eb);
                 color: #ffffff;
                 border: none;
-                width: 40px;
-                height: 40px;
+                width: 38px;
+                height: 38px;
                 border-radius: 999px;
-                font-size: 1.45rem;
+                font-size: 1.4rem;
                 font-weight: 800;
                 display: inline-flex;
                 align-items: center;
@@ -1353,6 +1449,13 @@
             <span class="nav-text">Short</span>
         </button>
 
+        <button class="nav-item" data-nav="dm" onclick="switchView('dm', this)">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <span class="nav-text">الخاص</span>
+        </button>
+
         <button class="nav-item" onclick="openUserProfile(getCurrentUserHandle(), 'tweets')">
             <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
@@ -1384,7 +1487,6 @@
         <button class="nav-item" onclick="openAIModal()">
             <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9L12 3z"/>
-                <path d="M19 16l.9 2.1L22 19l-2.1.9L19 22l-.9-2.1L16 19l2.1-.9L19 16z"/>
             </svg>
             <span class="nav-text">الذكاء الاصطناعي</span>
         </button>
@@ -1406,9 +1508,9 @@
     <main class="main-feed">
         <div class="top-header">
             <div class="title-row">
-                <h2 style="font-size: 1.08rem; font-weight: 800;" id="viewTitle">التغريدات</h2>
+                <h2 style="font-size: 1.05rem; font-weight: 800;" id="viewTitle">التغريدات</h2>
                 <span id="activeHashtagChip" class="active-tag-chip" style="display:none;" onclick="clearActiveHashtag()"></span>
-                <span class="live-pill" title="تحديث فوري">
+                <span class="live-pill">
                     <span class="live-dot"></span>
                     <span>مباشر</span>
                 </span>
@@ -1416,7 +1518,7 @@
 
             <div class="header-actions">
                 <div class="search-box">
-                    <svg class="icon-svg" style="width:15px;height:15px;color:var(--muted);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg class="icon-svg" style="width:14px;height:14px;color:var(--muted);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
                     </svg>
                     <input type="text" id="searchInput" placeholder="بحث أو #هاشتاق..." oninput="onSearchOrHashtagInput()">
@@ -1446,14 +1548,17 @@
 
         <div class="mode-switch-bar">
             <button type="button" id="modeTweetsBtn" class="mode-tab-btn active" onclick="switchView('all')">
-                <span> قائمة التغريدات</span>
+                <span>📝 التغريدات</span>
             </button>
             <button type="button" id="modeShortsBtn" class="mode-tab-btn short-tab" onclick="switchView('shorts')">
-                <span> قائمة Short (9:12)</span>
+                <span>🎬 Short</span>
+            </button>
+            <button type="button" id="modeDmBtn" class="mode-tab-btn" onclick="switchView('dm')">
+                <span>✉️ الخاص</span>
             </button>
         </div>
 
-        <div class="communities-bar">
+        <div class="communities-bar" id="communitiesBar">
             <button class="comm-pill active" onclick="setCommunity('الكل', this)">الكل</button>
             <button class="comm-pill" onclick="setCommunity('عام', this)">r/عام</button>
             <button class="comm-pill" onclick="setCommunity('برمجة', this)">r/برمجة</button>
@@ -1468,7 +1573,7 @@
                 <textarea id="postContent" placeholder="اكتب تغريدتك أو #هاشتاق الموضوع ليصل لمن يبحث عنه..." oninput="onComposerDraftInput()" onkeydown="handleComposerKey(event)"></textarea>
             </div>
 
-            <div style="font-size:0.78rem;color:var(--accent);font-weight:700;margin-bottom:8px;" id="hashtagAlgoHint">
+            <div style="font-size:0.76rem;color:var(--accent);font-weight:700;margin-bottom:8px;" id="hashtagAlgoHint">
                 الهاشتاقات تساعد الخوارزمية على توجيه المحتوى لمن يبحث عن نفس الموضوع.
             </div>
 
@@ -1483,9 +1588,7 @@
             <div class="composer-tools">
                 <div class="tool-group">
                     <button type="button" class="plus-trigger-btn" onclick="openCreatePicker()" title="تغريدة / صورة / فيديو">+</button>
-
-                    <button type="button" id="shortModeBtn" class="short-toggle-chip" onclick="toggleShortComposer()"> Short</button>
-
+                    <button type="button" id="shortModeBtn" class="short-toggle-chip" onclick="toggleShortComposer()">🎬 Short</button>
                     <button type="button" class="media-upload-btn" onclick="insertHashtagTemplate()"># هاشتاق</button>
 
                     <select id="postCommunity" class="select-clean">
@@ -1520,17 +1623,17 @@
                         <span id="sidebarNameDisplay"></span>
                         <span id="sidebarVerifiedSlot"></span>
                     </div>
-                    <div style="font-size:0.82rem;color:var(--muted);" id="sidebarHandleDisplay"></div>
+                    <div style="font-size:0.8rem;color:var(--muted);" id="sidebarHandleDisplay"></div>
                 </div>
             </div>
-            <div style="font-size:0.82rem;color:var(--accent);font-weight:700;" id="sidebarFollowersDisplay"></div>
+            <div style="font-size:0.8rem;color:var(--accent);font-weight:700;" id="sidebarFollowersDisplay"></div>
         </div>
 
         <div class="ad-card">
             <span class="ad-pill">إعلان · خوارزمية الهاشتاق</span>
-            <div style="font-weight:800;font-size:0.98rem;margin-bottom:6px;">الهاشتاق يربط المحتوى بمن يبحث عن الحل</div>
-            <p style="font-size:0.83rem;color:var(--muted);line-height:1.55;margin-bottom:10px;">
-                استخدم هاشتاقاً دقيقاً يصف المشكلة أو الموضوع؛ خوارزمية Short تقرّب المقاطع المطابقة لاهتماماتك وبحثك.
+            <div style="font-weight:800;font-size:0.95rem;margin-bottom:5px;">الهاشتاق يربط المحتوى بمن يبحث عن الحل</div>
+            <p style="font-size:0.8rem;color:var(--muted);line-height:1.5;margin-bottom:8px;">
+                اكتب هاشتاقاً واضحاً لترشيح الـ Short تلقائياً للأشخاص المهتمين بنفس الموضوع.
             </p>
             <button type="button" class="btn-publish" style="width:100%;" onclick="startPromoteContent()">أنشئ Short بهاشتاق موضوعي</button>
         </div>
@@ -1539,7 +1642,7 @@
             <div class="widget-title">
                 <span># الهاشتاقات الذكية</span>
             </div>
-            <p style="font-size: 0.8rem; color: var(--muted);">اختر هاشتاقاً لترتيب وترشيح المقاطع والحلول المطابقة له:</p>
+            <p style="font-size: 0.78rem; color: var(--muted);">اختر هاشتاقاً لترتيب وترشيح المقاطع والحلول المطابقة له:</p>
             <div id="trendingHashtagsBox" class="hashtag-cloud"></div>
         </div>
 
@@ -1550,9 +1653,6 @@
                 </svg>
                 <span>Nexus Messenger</span>
             </div>
-            <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 10px;">
-                افتح محادثات Nexus Messenger مباشرة من هنا.
-            </p>
             <button class="btn-publish" style="width: 100%;" onclick="openNexus()">فتح المحادثات</button>
         </div>
     </aside>
@@ -1573,21 +1673,20 @@
         <span>Short</span>
     </button>
 
-    <button class="mobile-plus-btn" onclick="openCreatePicker()" aria-label="إنشاء تغريدة أو صورة أو فيديو">+</button>
+    <button class="mobile-plus-btn" onclick="openCreatePicker()" aria-label="إنشاء">+</button>
+
+    <button class="mobile-bar-btn" onclick="switchView('dm', this)">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+        </svg>
+        <span>الخاص</span>
+    </button>
 
     <button class="mobile-bar-btn" onclick="openUserProfile(getCurrentUserHandle(), 'tweets')">
         <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
         </svg>
         <span>حسابي</span>
-    </button>
-
-    <button class="mobile-bar-btn" onclick="openSettings()">
-        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="3"/>
-            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-        </svg>
-        <span>الإعدادات</span>
     </button>
 </nav>
 
@@ -1641,7 +1740,7 @@
 
 <div class="modal-overlay" id="aiModal">
     <div class="modal-box">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
             <h3 style="display:flex;align-items:center;gap:8px;">
                 <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9L12 3z"/>
@@ -1651,18 +1750,15 @@
             <button class="react-pill" onclick="closeModal('aiModal')">✕</button>
         </div>
 
-        <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 12px; margin-bottom: 12px;">
-            <div style="font-size: 0.85rem; margin-bottom: 6px; font-weight: 700;">مفتاح API:</div>
-            <div style="font-size: 0.82rem; color: var(--muted); margin-bottom: 8px;">
-                أنشئ مفتاح API من:
-                <a href="https://aistudio.google.com/apps" target="_blank" class="api-help-link">https://aistudio.google.com/apps</a>
-            </div>
-            <input type="password" id="aiModalKeyInput" class="input-clean" style="width: 100%;" placeholder="الصق مفتاح API هنا..." onchange="syncApiKeyFromModal()">
+        <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 10px; margin-bottom: 10px;">
+            <div style="font-size: 0.84rem; margin-bottom: 4px; font-weight: 700;">مفتاح API:</div>
+            <a href="https://aistudio.google.com/apps" target="_blank" class="api-help-link">https://aistudio.google.com/apps</a>
+            <input type="password" id="aiModalKeyInput" class="input-clean" style="width: 100%; margin-top: 6px;" placeholder="الصق مفتاح API هنا..." onchange="syncApiKeyFromModal()">
         </div>
 
-        <textarea id="aiPromptInput" class="input-clean" style="width: 100%; height: 95px; margin-bottom: 12px; resize: none;" placeholder="اكتب النص المراد تحسينه أو تلخيصه..."></textarea>
+        <textarea id="aiPromptInput" class="input-clean" style="width: 100%; height: 90px; margin-bottom: 10px; resize: none;" placeholder="اكتب النص المراد تحسينه أو تلخيصه..."></textarea>
 
-        <div style="display: flex; gap: 8px; margin-bottom: 12px;">
+        <div style="display: flex; gap: 8px; margin-bottom: 10px;">
             <button class="btn-publish" onclick="runAIModal('enhance')">تحسين الصياغة</button>
             <button class="ai-btn" onclick="runAIModal('summarize')">تلخيص</button>
         </div>
@@ -1674,36 +1770,26 @@
 
 <div class="modal-overlay" id="settingsModal">
     <div class="modal-box">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-            <h3 style="display:flex;align-items:center;gap:8px;">
-                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="3"/>
-                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-                </svg>
-                <span>الإعدادات</span>
-            </h3>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <h3 style="font-weight: 800;">الإعدادات</h3>
             <button class="react-pill" onclick="closeModal('settingsModal')">✕</button>
         </div>
 
         <div class="setting-row">
-            <div>
-                <div style="font-weight: 700;">الاسم</div>
-            </div>
+            <div style="font-weight: 700;">الاسم</div>
             <input type="text" id="setAuthor" class="input-clean" onchange="saveSettings()">
         </div>
 
         <div class="setting-row">
             <div>
                 <div style="font-weight: 700;">المعرّف (اليوزر)</div>
-                <div id="handleLockNotice" style="font-size: 0.76rem; color: var(--muted);"></div>
+                <div id="handleLockNotice" style="font-size: 0.75rem; color: var(--muted);"></div>
             </div>
             <input type="text" id="setHandle" class="input-clean" onchange="saveSettings()">
         </div>
 
         <div class="setting-row">
-            <div>
-                <div style="font-weight: 700;">صورة الحساب</div>
-            </div>
+            <div style="font-weight: 700;">صورة الحساب</div>
             <div style="display:flex;gap:6px;align-items:center;">
                 <input type="file" id="avatarFileInput" accept="image/*" style="display:none;" onchange="handleAvatarUpload(event)">
                 <button type="button" class="media-upload-btn" onclick="document.getElementById('avatarFileInput').click()">اختيار صورة</button>
@@ -1720,9 +1806,7 @@
         </div>
 
         <div class="setting-row">
-            <div>
-                <div style="font-weight: 700;">المظهر</div>
-            </div>
+            <div style="font-weight: 700;">المظهر</div>
             <select id="setTheme" class="select-clean" onchange="saveSettings()">
                 <option value="system">الافتراضي للنظام</option>
                 <option value="dark">داكن</option>
@@ -1731,9 +1815,7 @@
         </div>
 
         <div class="setting-row">
-            <div>
-                <div style="font-weight: 700;">حجم الخط</div>
-            </div>
+            <div style="font-weight: 700;">حجم الخط</div>
             <select id="setFontSize" class="select-clean" onchange="saveSettings()">
                 <option value="14px">صغير</option>
                 <option value="15px">متوسط</option>
@@ -1742,9 +1824,7 @@
         </div>
 
         <div class="setting-row" style="border: none;">
-            <div>
-                <div style="font-weight: 700;">صوت التشغيل (أسلوب Windows 7 / 11)</div>
-            </div>
+            <div style="font-weight: 700;">صوت التشغيل (أسلوب Windows 7 / 11)</div>
             <label class="switch">
                 <input type="checkbox" id="setBootSound" onchange="saveSettings()">
                 <span class="slider"></span>
@@ -1755,16 +1835,22 @@
 
 <script>
     const VERIFIED_THRESHOLD = 3000;
+    const VIEW_COOLDOWN_MS = 2500;
     let posts = [];
+    let knownUsers = {};
     let currentCommunity = 'الكل';
     let currentView = 'all';
     let activeHashtag = '';
     let isShortComposerMode = false;
     let shortIndex = 0;
     let reachedEndOfShorts = false;
+    let activeShortId = null;
     let shortTouchStartY = null;
     let shortWheelLock = false;
-    let recordedViewIds = new Set();
+    let lastViewTickByPostId = new Map();
+
+    let activeDmPeer = '';
+    let dmMessages = [];
 
     let bookmarks = JSON.parse(localStorage.getItem('vloxy_bookmarks') || '[]');
     let heartedPosts = JSON.parse(localStorage.getItem('vloxy_hearted') || '[]').map(String);
@@ -1804,6 +1890,10 @@
 
     function getCurrentUserHandle() {
         return normalizeExactHandle(userSettings.handle) || '@user';
+    }
+
+    function getConversationKey(a, b) {
+        return [normalizePostHandle(a), normalizePostHandle(b)].sort().join('__');
     }
 
     function extractHashtags(text) {
@@ -1865,20 +1955,19 @@
         const val = document.getElementById('postContent').value;
         const tags = extractHashtags(val);
         const el = document.getElementById('hashtagAlgoHint');
-        if (!el) return;
-        if (tags.length > 0) {
-            el.textContent = `الخوارزمية ستصنّف هذا المحتوى تحت: ${tags.join(' · ')} ليوصل لمن يبحث عن الحل.`;
-        } else {
-            el.textContent = 'الهاشتاقات تساعد الخوارزمية على توجيه المحتوى لمن يبحث عن نفس الموضوع.';
-        }
-        if (currentView === 'shorts') {
-            renderPosts(true);
+        if (el) {
+            el.textContent = tags.length > 0
+                ? `الخوارزمية ستصنّف هذا المحتوى تحت: ${tags.join(' · ')} ليوصل لمن يبحث عن الحل.`
+                : 'الهاشتاقات تساعد الخوارزمية على توجيه المحتوى لمن يبحث عن نفس الموضوع.';
         }
     }
 
     function onSearchOrHashtagInput() {
-        shortIndex = 0;
-        reachedEndOfShorts = false;
+        if (currentView === 'shorts') {
+            shortIndex = 0;
+            reachedEndOfShorts = false;
+            activeShortId = null;
+        }
         renderPosts(true);
     }
 
@@ -1910,11 +1999,13 @@
         });
     }
 
-    async function recordRealViewOnce(post) {
+    async function recordVideoView(post) {
         if (!post || post._pending) return;
         const idStr = String(post.id);
-        if (recordedViewIds.has(idStr)) return;
-        recordedViewIds.add(idStr);
+        const now = Date.now();
+        const lastTick = lastViewTickByPostId.get(idStr) || 0;
+        if (now - lastTick < VIEW_COOLDOWN_MS) return;
+        lastViewTickByPostId.set(idStr, now);
 
         post.views = (Number(post.views) || 0) + 1;
         const vEl = document.getElementById(`shortViewsCount-${post.id}`);
@@ -1935,7 +2026,8 @@
         if (!list.length) {
             shortIndex = 0;
             reachedEndOfShorts = true;
-            renderPosts(true);
+            activeShortId = null;
+            renderShortsStage(document.getElementById('feedContainer'), true);
             return;
         }
 
@@ -1954,13 +2046,14 @@
                 shortIndex -= 1;
             }
         }
-        renderPosts(true);
+        renderShortsStage(document.getElementById('feedContainer'), true);
     }
 
     function resetShortsToStart() {
         shortIndex = 0;
         reachedEndOfShorts = false;
-        renderPosts(true);
+        activeShortId = null;
+        renderShortsStage(document.getElementById('feedContainer'), true);
     }
 
     function handleShortTouchStart(ev) {
@@ -1983,7 +2076,7 @@
         if (Math.abs(ev.deltaY) > 28) {
             shortWheelLock = true;
             stepShort(ev.deltaY > 0 ? 1 : -1);
-            setTimeout(() => { shortWheelLock = false; }, 240);
+            setTimeout(() => { shortWheelLock = false; }, 260);
         }
     }
 
@@ -1997,46 +2090,48 @@
         if (!listEl) return;
 
         if (!comments.length) {
-            listEl.innerHTML = `<div style="text-align:center;color:var(--muted);padding:24px 10px;font-size:0.84rem;">لا توجد تعليقات بعد. شارك رأيك أو الحل هنا!</div>`;
+            listEl.innerHTML = `<div style="text-align:center;color:var(--muted);padding:20px 8px;font-size:0.82rem;">لا توجد تعليقات بعد. شارك رأيك أو الحل هنا!</div>`;
             return;
         }
 
         listEl.innerHTML = comments.map(c => `
             <div class="short-comment-item">
-                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px;">
-                    <strong style="color:var(--accent);font-size:0.82rem;">${escapeHtml(c.author || 'مستخدم')}</strong>
-                    <span style="font-size:0.7rem;color:var(--muted);">${new Date(c.timestamp || Date.now()).toLocaleTimeString('ar-SA', { hour: '2-digit', minute: '2-digit' })}</span>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2px;">
+                    <strong style="color:var(--accent);font-size:0.8rem;">${escapeHtml(c.author || 'مستخدم')}</strong>
+                    <span style="font-size:0.68rem;color:var(--muted);">${new Date(c.timestamp || Date.now()).toLocaleTimeString('ar-SA', { hour: '2-digit', minute: '2-digit' })}</span>
                 </div>
-                <div style="line-height:1.5;word-break:break-word;">${escapeHtml(c.text)}</div>
+                <div style="line-height:1.45;word-break:break-word;">${escapeHtml(c.text)}</div>
             </div>
         `).join('');
         listEl.scrollTop = listEl.scrollHeight;
     }
 
-    function renderShortsStage(container) {
+    function syncShortLiveStats(post) {
+        if (!post) return;
+        const hEl = document.getElementById(`shortHeartCount-${post.id}`);
+        const vEl = document.getElementById(`shortViewsCount-${post.id}`);
+        const rEl = document.getElementById(`shortRepostCount-${post.id}`);
+        if (hEl) hEl.textContent = String(Number(post.hearts) || 0);
+        if (vEl) vEl.textContent = String(Number(post.views) || 0);
+        if (rEl) rEl.textContent = String(Number(post.reposts) || 0);
+        renderShortCommentsOnly(post.id);
+    }
+
+    function renderShortsStage(container, forceRebuild = false) {
         const list = getFilteredShortsList();
 
-        if (!list.length) {
+        if (!list.length || reachedEndOfShorts || shortIndex >= list.length) {
+            activeShortId = null;
+            const titleMsg = !list.length
+                ? 'لا يوجد شورت جديد مطابق للهاشتاق أو البحث الحالي.'
+                : 'لقد استعرضت جميع مقاطع Short المطابقة حالياً.';
             container.innerHTML = `
                 <div class="shorts-stage">
                     <div class="no-more-shorts-card">
-                        <div style="font-size:1.1rem;font-weight:800;">لا يوجد شورت جديد</div>
-                        <p style="font-size:0.86rem;color:var(--muted);">لم يتم العثور على مقطع Short مطابق للهاشتاق أو البحث الحالي.</p>
-                        <button type="button" class="btn-publish" onclick="chooseCreateType('short')">إنشاء Short جديد</button>
-                    </div>
-                </div>
-            `;
-            return;
-        }
-
-        if (reachedEndOfShorts || shortIndex >= list.length) {
-            container.innerHTML = `
-                <div class="shorts-stage">
-                    <div class="no-more-shorts-card">
-                        <div style="font-size:1.1rem;font-weight:800;">لا يوجد شورت جديد</div>
-                        <p style="font-size:0.86rem;color:var(--muted);">لقد استعرضت جميع مقاطع Short المطابقة حالياً.</p>
+                        <div style="font-size:1.05rem;font-weight:800;">لا يوجد شورت جديد</div>
+                        <p style="font-size:0.84rem;color:var(--muted);">${titleMsg}</p>
                         <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;">
-                            <button type="button" class="btn-publish" onclick="resetShortsToStart()">العودة لأول Short</button>
+                            ${list.length ? `<button type="button" class="btn-publish" onclick="resetShortsToStart()">العودة لأول Short</button>` : ''}
                             <button type="button" class="media-upload-btn" onclick="chooseCreateType('short')">+ نشر Short</button>
                         </div>
                     </div>
@@ -2047,6 +2142,13 @@
 
         const item = list[shortIndex];
         const itemIdStr = String(item.id);
+
+        if (!forceRebuild && activeShortId === itemIdStr && document.getElementById(`shortCommentsList-${item.id}`)) {
+            syncShortLiveStats(item);
+            return;
+        }
+
+        activeShortId = itemIdStr;
         const isHearted = heartedPosts.includes(itemIdStr);
         const postHandle = normalizePostHandle(item.handle);
         const activeHandle = getCurrentUserHandle();
@@ -2059,11 +2161,11 @@
         const matchLabel = getHashtagMatchReason(item);
 
         const mediaVisual = (item.mediaType === 'video' && item.mediaData)
-            ? `<video src="${item.mediaData}" class="shorts-media-el" controls autoplay loop playsinline></video>`
+            ? `<video id="shortVideoEl-${item.id}" src="${item.mediaData}" class="shorts-media-el" controls autoplay loop playsinline onplay="onShortVideoPlay(${item.id})" onended="onShortVideoEnded(${item.id})"></video>`
             : (item.mediaType === 'image' && item.mediaData)
                 ? `<img src="${item.mediaData}" alt="Short" class="shorts-media-el">`
                 : `<div class="shorts-placeholder-art">
-                    <div style="font-size:1.15rem;font-weight:800;color:#ffffff;line-height:1.6;">${formatPostContentWithHashtags(item.content || 'مقطع Short')}</div>
+                    <div style="font-size:1.08rem;font-weight:800;color:#ffffff;line-height:1.55;">${formatPostContentWithHashtags(item.content || 'مقطع Short')}</div>
                    </div>`;
 
         container.innerHTML = `
@@ -2073,7 +2175,7 @@
                         ${mediaVisual}
 
                         <div class="shorts-top-overlay">
-                            <span class="short-badge">Short 9:12</span>
+                            <span class="short-badge">Short</span>
                             <span class="algo-match-badge">${escapeHtml(matchLabel)}</span>
                             <span class="shorts-counter-pill">${shortIndex + 1}/${list.length}</span>
                         </div>
@@ -2084,34 +2186,34 @@
                                 <span id="shortHeartCount-${item.id}">${Number(item.hearts) || 0}</span>
                             </button>
                             <button type="button" class="short-rail-btn" onclick="focusShortCommentInput(${item.id})" title="التعليقات">
-                                <span></span>
+                                <span>💬</span>
                                 <span id="shortCommentsCount-${item.id}">${commentsCount}</span>
                             </button>
                             <button type="button" class="short-rail-btn" onclick="repost(${item.id})" title="إعادة نشر">
-                                <span></span>
+                                <span>🔁</span>
                                 <span id="shortRepostCount-${item.id}">${Number(item.reposts) || 0}</span>
                             </button>
                             <button type="button" class="short-rail-btn" onclick="toggleBookmark(${item.id})" title="حفظ">
-                                <span>${bookmarks.includes(item.id) ? '' : ''}</span>
+                                <span>${bookmarks.includes(item.id) ? '🔖' : '📑'}</span>
                             </button>
                         </div>
 
                         <div class="shorts-bottom-overlay">
-                            <button type="button" class="author-trigger" style="color:#ffffff;margin-bottom:6px;" onclick="openUserProfile('${escapeHtml(postHandle)}', 'shorts')">
+                            <button type="button" class="author-trigger" style="color:#ffffff;margin-bottom:5px;" onclick="openUserProfile('${escapeHtml(postHandle)}', 'shorts')">
                                 ${renderAvatar(displayAuthor, displayAvatar)}
                                 <span style="display:flex;align-items:center;gap:4px;flex-wrap:wrap;">
                                     <strong class="author-name-text" style="color:#ffffff;">${escapeHtml(displayAuthor)}</strong>
                                     ${renderVerifiedBadge(followers)}
-                                    <span style="font-size:0.76rem;opacity:0.85;">${escapeHtml(postHandle)}</span>
+                                    <span style="font-size:0.74rem;opacity:0.85;">${escapeHtml(postHandle)}</span>
                                 </span>
                             </button>
-                            ${item.content ? `<div style="font-size:0.88rem;line-height:1.5;white-space:pre-wrap;">${formatPostContentWithHashtags(item.content)}</div>` : ''}
+                            ${item.content ? `<div style="font-size:0.86rem;line-height:1.45;white-space:pre-wrap;">${formatPostContentWithHashtags(item.content)}</div>` : ''}
                         </div>
                     </div>
 
                     <div class="short-comments-panel">
                         <div class="short-comments-header">
-                            <span> التعليقات</span>
+                            <span>💬 التعليقات</span>
                             <span class="views-chip">👁 <span id="shortViewsCount-${item.id}">${realViews}</span> مشاهدة</span>
                         </div>
 
@@ -2119,21 +2221,38 @@
 
                         <div style="display:flex;gap:6px;padding-top:8px;border-top:1px solid var(--border);">
                             <input type="text" id="shortCommentInput-${item.id}" class="input-clean" style="flex:1;" placeholder="أضف تعليقاً أو حلاً..." onkeydown="if(event.key==='Enter'){event.preventDefault();sendShortComment(${item.id});}">
-                            <button type="button" class="btn-publish" style="padding:6px 14px;" onclick="sendShortComment(${item.id})">إرسال</button>
+                            <button type="button" class="btn-publish" style="padding:6px 12px;" onclick="sendShortComment(${item.id})">إرسال</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="shorts-nav-bar">
                     <button type="button" class="shorts-nav-btn" onclick="stepShort(-1)" ${shortIndex === 0 && !reachedEndOfShorts ? 'disabled' : ''}>▲ السابق</button>
-                    <button type="button" class="shorts-nav-btn" onclick="stepShort(1)">▼ التالي (شورت جديد)</button>
+                    <button type="button" class="shorts-nav-btn" onclick="stepShort(1)">▼ التالي</button>
                 </div>
             </div>
         `;
 
         renderShortCommentsOnly(item.id);
         bumpHashtagAffinity(extractHashtags(item.content), 1);
-        recordRealViewOnce(item);
+
+        const currentPost = posts.find(p => String(p.id) === itemIdStr);
+        if (currentPost && (!currentPost.mediaData || currentPost.mediaType !== 'video')) {
+            recordVideoView(currentPost);
+        }
+    }
+
+    function onShortVideoPlay(postId) {
+        const post = posts.find(p => String(p.id) === String(postId));
+        if (post) recordVideoView(post);
+    }
+
+    function onShortVideoEnded(postId) {
+        const post = posts.find(p => String(p.id) === String(postId));
+        if (post) {
+            lastViewTickByPostId.delete(String(post.id));
+            recordVideoView(post);
+        }
     }
 
     function focusShortCommentInput(id) {
@@ -2169,6 +2288,154 @@
                 body: JSON.stringify({ author: userSettings.author, text })
             });
         } catch (e) {}
+    }
+
+    function getAllKnownHandles() {
+        const me = getCurrentUserHandle();
+        const set = new Set();
+        Object.keys(knownUsers || {}).forEach(h => {
+            const nh = normalizePostHandle(h);
+            if (nh !== me) set.add(nh);
+        });
+        posts.forEach(p => {
+            const nh = normalizePostHandle(p.handle);
+            if (nh !== me) {
+                set.add(nh);
+                if (!knownUsers[nh]) {
+                    knownUsers[nh] = { handle: nh, author: p.author || 'مستخدم', avatar: p.avatar || '', followers: p.followers || 0 };
+                }
+            }
+        });
+        return Array.from(set);
+    }
+
+    function openDirectMessageWith(targetHandle) {
+        const peer = normalizePostHandle(targetHandle);
+        if (peer === getCurrentUserHandle()) return;
+        activeDmPeer = peer;
+        closeModal('profileModal');
+        switchView('dm');
+    }
+
+    async function loadDmConversation(peerHandle) {
+        const peer = normalizePostHandle(peerHandle);
+        const me = getCurrentUserHandle();
+        activeDmPeer = peer;
+        try {
+            const res = await fetch(`/api/dm?me=${encodeURIComponent(me)}&peer=${encodeURIComponent(peer)}`, { cache: 'no-store' });
+            if (res.ok) {
+                const data = await res.json();
+                dmMessages = Array.isArray(data.messages) ? data.messages : [];
+            }
+        } catch (e) {}
+        if (currentView === 'dm') {
+            renderDmStage(document.getElementById('feedContainer'));
+        }
+    }
+
+    async function sendDirectMessage() {
+        const inp = document.getElementById('dmMessageInput');
+        if (!inp) return;
+        const text = inp.value.trim();
+        const me = getCurrentUserHandle();
+        if (!text || !activeDmPeer || activeDmPeer === me) return;
+
+        const optimisticMsg = {
+            id: Date.now(),
+            senderHandle: me,
+            receiverHandle: activeDmPeer,
+            senderName: userSettings.author,
+            text,
+            timestamp: new Date().toISOString()
+        };
+        dmMessages.push(optimisticMsg);
+        inp.value = '';
+        renderDmStage(document.getElementById('feedContainer'));
+
+        try {
+            await fetch('/api/dm', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    senderHandle: me,
+                    receiverHandle: activeDmPeer,
+                    senderName: userSettings.author,
+                    text
+                })
+            });
+        } catch (e) {}
+    }
+
+    function renderDmStage(container) {
+        const me = getCurrentUserHandle();
+        const handles = getAllKnownHandles();
+        if (!activeDmPeer && handles.length) {
+            activeDmPeer = handles[0];
+        }
+
+        const contactsHtml = handles.length
+            ? handles.map(h => {
+                const u = knownUsers[h] || {};
+                const name = (u.author && u.author !== 'مستخدم') ? u.author : h;
+                return `
+                    <button type="button" class="dm-contact-btn ${activeDmPeer === h ? 'active' : ''}" onclick="loadDmConversation('${escapeHtml(h)}')">
+                        ${renderAvatar(name, u.avatar || '')}
+                        <div style="min-width:0;overflow:hidden;">
+                            <div style="font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${escapeHtml(name)}</div>
+                            <div style="font-size:0.72rem;color:var(--muted);">${escapeHtml(h)}</div>
+                        </div>
+                    </button>
+                `;
+            }).join('')
+            : `<div style="font-size:0.8rem;color:var(--muted);padding:10px;text-align:center;">لا توجد حسابات أخرى بعد.</div>`;
+
+        const peerInfo = knownUsers[activeDmPeer] || {};
+        const peerName = (peerInfo.author && peerInfo.author !== 'مستخدم') ? peerInfo.author : (activeDmPeer || 'اختر مستخدماً');
+
+        const msgsHtml = activeDmPeer
+            ? (dmMessages.length
+                ? dmMessages.map(m => {
+                    const isMine = normalizePostHandle(m.senderHandle) === me;
+                    return `
+                        <div class="dm-msg-row ${isMine ? 'mine' : 'theirs'}">
+                            <div class="dm-bubble">${escapeHtml(m.text)}</div>
+                            <span style="font-size:0.66rem;color:var(--muted);margin-top:2px;">${new Date(m.timestamp || Date.now()).toLocaleTimeString('ar-SA', { hour: '2-digit', minute: '2-digit' })}</span>
+                        </div>
+                    `;
+                }).join('')
+                : `<div style="text-align:center;color:var(--muted);margin:auto;font-size:0.84rem;">ابدأ محادثة خاصة مع ${escapeHtml(peerName)}</div>`)
+            : `<div style="text-align:center;color:var(--muted);margin:auto;font-size:0.84rem;">اختر حساباً لبدء الدردشة الخاصة</div>`;
+
+        container.innerHTML = `
+            <div class="dm-stage">
+                <div class="dm-contacts-box">
+                    <div style="font-size:0.82rem;font-weight:800;padding:4px 6px;color:var(--muted);">المستخدمون</div>
+                    ${contactsHtml}
+                </div>
+
+                <div class="dm-chat-box">
+                    <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:8px;border-bottom:1px solid var(--border);margin-bottom:8px;">
+                        <div style="display:flex;align-items:center;gap:8px;">
+                            ${activeDmPeer ? renderAvatar(peerName, peerInfo.avatar || '') : ''}
+                            <div>
+                                <div style="font-weight:800;font-size:0.92rem;">${escapeHtml(peerName)}</div>
+                                <div style="font-size:0.74rem;color:var(--muted);">${escapeHtml(activeDmPeer || '')}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dm-messages-area" id="dmMessagesArea">${msgsHtml}</div>
+
+                    <div style="display:flex;gap:6px;padding-top:8px;border-top:1px solid var(--border);">
+                        <input type="text" id="dmMessageInput" class="input-clean" style="flex:1;" placeholder="اكتب رسالة خاصة..." ${!activeDmPeer ? 'disabled' : ''} onkeydown="if(event.key==='Enter'){event.preventDefault();sendDirectMessage();}">
+                        <button type="button" class="btn-publish" ${!activeDmPeer ? 'disabled' : ''} onclick="sendDirectMessage()">إرسال</button>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        const area = document.getElementById('dmMessagesArea');
+        if (area) area.scrollTop = area.scrollHeight;
     }
 
     function isHandleTakenByAnotherUser(candidateHandle) {
@@ -2558,7 +2825,7 @@
             const sig = computeFeedSignature(posts);
             if (forceRender || sig !== lastFeedSignature) {
                 lastFeedSignature = sig;
-                renderPosts(true);
+                renderPosts(false);
             }
         } catch (e) {} finally {
             isFetchingPosts = false;
@@ -2570,10 +2837,11 @@
         try {
             const msg = JSON.parse(rawData);
             const activeHandle = getCurrentUserHandle();
-            if (msg.type === 'init' && Array.isArray(msg.posts)) {
-                mergePosts(msg.posts);
+            if (msg.type === 'init') {
+                if (Array.isArray(msg.posts)) mergePosts(msg.posts);
+                if (msg.users && typeof msg.users === 'object') knownUsers = { ...knownUsers, ...msg.users };
                 lastFeedSignature = computeFeedSignature(posts);
-                renderPosts(true);
+                renderPosts(false);
             } else if (msg.type === 'new_post' && msg.post) {
                 const exists = posts.some(
                     p => String(p.id) === String(msg.post.id) ||
@@ -2591,29 +2859,35 @@
                 autoSaveMatchingHashtagVideos(msg.post);
                 posts.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
                 lastFeedSignature = computeFeedSignature(posts);
-                renderPosts(true);
+                renderPosts(false);
             } else if (msg.type === 'post_update' && msg.post) {
                 posts = posts.map(p => (String(p.id) === String(msg.post.id) ? msg.post : p));
                 lastFeedSignature = computeFeedSignature(posts);
-                if (currentView === 'shorts') {
-                    const hEl = document.getElementById(`shortHeartCount-${msg.post.id}`);
-                    if (hEl) hEl.textContent = String(Number(msg.post.hearts) || 0);
-                    const vEl = document.getElementById(`shortViewsCount-${msg.post.id}`);
-                    if (vEl) vEl.textContent = String(Number(msg.post.views) || 0);
-                    renderShortCommentsOnly(msg.post.id);
+                if (currentView === 'shorts' && String(activeShortId) === String(msg.post.id)) {
+                    syncShortLiveStats(msg.post);
                 }
             } else if (msg.type === 'delete_post') {
                 posts = posts.filter(p => String(p.id) !== String(msg.id));
                 lastFeedSignature = computeFeedSignature(posts);
                 renderPosts(true);
+            } else if (msg.type === 'dm_message' && msg.message) {
+                const expectedKey = activeDmPeer ? getConversationKey(activeHandle, activeDmPeer) : '';
+                if (expectedKey && msg.key === expectedKey) {
+                    const exists = dmMessages.some(m => String(m.id) === String(msg.message.id));
+                    if (!exists) {
+                        dmMessages.push(msg.message);
+                        if (currentView === 'dm') {
+                            renderDmStage(document.getElementById('feedContainer'));
+                        }
+                    }
+                }
             } else if (msg.type === 'profile' || msg.type === 'follow') {
                 const h = normalizePostHandle(msg.handle);
                 const updatedFollowers = Math.max(0, Number(msg.user?.followers) || 0);
+                if (msg.user) knownUsers[h] = { ...knownUsers[h], ...msg.user, followers: updatedFollowers };
                 posts.forEach(p => {
                     if (normalizePostHandle(p.handle) === h) {
-                        if (msg.user?.author && msg.user.author !== 'مستخدم') {
-                            p.author = msg.user.author;
-                        }
+                        if (msg.user?.author && msg.user.author !== 'مستخدم') p.author = msg.user.author;
                         if (msg.user?.avatar) p.avatar = msg.user.avatar;
                         p.followers = updatedFollowers;
                         p.verified = isVerifiedCount(updatedFollowers);
@@ -2621,24 +2895,11 @@
                 });
                 if (h === activeHandle) {
                     userSettings.followers = updatedFollowers;
-                    if (msg.user?.author && msg.user.author !== 'مستخدم') {
-                        userSettings.author = msg.user.author;
-                    }
+                    if (msg.user?.author && msg.user.author !== 'مستخدم') userSettings.author = msg.user.author;
                     localStorage.setItem('vloxy_settings', JSON.stringify(userSettings));
                     applySettings();
                 }
                 lastFeedSignature = computeFeedSignature(posts);
-                if (activeProfileHandle === h) {
-                    const currentModalUser = {
-                        handle: h,
-                        author: (msg.user?.author && msg.user.author !== 'مستخدم')
-                            ? msg.user.author
-                            : (posts.find(p => normalizePostHandle(p.handle) === h)?.author || userSettings.author),
-                        avatar: msg.user?.avatar || posts.find(p => normalizePostHandle(p.handle) === h)?.avatar || '',
-                        followers: updatedFollowers
-                    };
-                    renderProfileModalView(h, currentModalUser, posts.filter(p => normalizePostHandle(p.handle) === h));
-                }
             }
         } catch (e) {}
     }
@@ -2651,7 +2912,7 @@
             es.addEventListener('sync', (ev) => handleStreamMessage(ev.data));
             es.addEventListener('message', (ev) => handleStreamMessage(ev.data));
             es.onerror = () => {
-                fetchPosts(true);
+                fetchPosts(false);
             };
         } catch (e) {}
     }
@@ -2659,28 +2920,45 @@
     function syncModeButtons() {
         const tBtn = document.getElementById('modeTweetsBtn');
         const sBtn = document.getElementById('modeShortsBtn');
-        if (tBtn) tBtn.classList.toggle('active', currentView !== 'shorts');
+        const dBtn = document.getElementById('modeDmBtn');
+        if (tBtn) tBtn.classList.toggle('active', currentView !== 'shorts' && currentView !== 'dm');
         if (sBtn) sBtn.classList.toggle('active', currentView === 'shorts');
+        if (dBtn) dBtn.classList.toggle('active', currentView === 'dm');
 
         document.querySelectorAll('.nav-item[data-nav]').forEach(el => {
             el.classList.toggle('active', el.getAttribute('data-nav') === currentView);
         });
     }
 
-    function switchView(view, btn) {
+    function switchView(view) {
         currentView = view;
         if (view === 'shorts') {
             shortIndex = 0;
             reachedEndOfShorts = false;
+            activeShortId = null;
         }
+        const compBox = document.getElementById('composerBox');
+        const commBar = document.getElementById('communitiesBar');
+        if (compBox) compBox.style.display = view === 'dm' ? 'none' : 'block';
+        if (commBar) commBar.style.display = view === 'dm' ? 'none' : 'flex';
+
         syncModeButtons();
         const titles = {
             all: 'التغريدات',
             shorts: 'Short',
+            dm: 'الدردشة الخاصة',
             trending: 'الأكثر تصويتاً',
             bookmarks: 'المحفوظات'
         };
         document.getElementById('viewTitle').textContent = titles[view] || 'التغريدات';
+        if (view === 'dm') {
+            const handles = getAllKnownHandles();
+            if (!activeDmPeer && handles.length) activeDmPeer = handles[0];
+            if (activeDmPeer) {
+                loadDmConversation(activeDmPeer);
+                return;
+            }
+        }
         renderPosts(true);
     }
 
@@ -2688,6 +2966,7 @@
         currentCommunity = comm;
         shortIndex = 0;
         reachedEndOfShorts = false;
+        activeShortId = null;
         document.querySelectorAll('.comm-pill').forEach(el => el.classList.remove('active'));
         btn.classList.add('active');
         renderPosts(true);
@@ -2701,6 +2980,7 @@
         }
         shortIndex = 0;
         reachedEndOfShorts = false;
+        activeShortId = null;
         renderPosts(true);
     }
 
@@ -2708,6 +2988,7 @@
         activeHashtag = '';
         shortIndex = 0;
         reachedEndOfShorts = false;
+        activeShortId = null;
         renderPosts(true);
     }
 
@@ -2737,7 +3018,7 @@
             .slice(0, 12);
 
         if (!sorted.length) {
-            box.innerHTML = `<span style="font-size:0.8rem;color:var(--muted);">اكتب هاشتاق مثل #برمجة أو #حلول لتصنيف المحتوى.</span>`;
+            box.innerHTML = `<span style="font-size:0.78rem;color:var(--muted);">اكتب هاشتاق مثل #برمجة أو #حلول لتصنيف المحتوى.</span>`;
             return;
         }
 
@@ -2772,7 +3053,7 @@
 
         const commentsHtml = (post.comments || []).map(c => `
             <div class="comment-bubble">
-                <strong style="color: var(--accent); font-size: 0.82rem;">${escapeHtml(c.author)}</strong>
+                <strong style="color: var(--accent); font-size: 0.8rem;">${escapeHtml(c.author)}</strong>
                 <div>${escapeHtml(c.text)}</div>
             </div>
         `).join('');
@@ -2792,12 +3073,12 @@
                             <span style="display:flex;align-items:center;gap:4px;flex-wrap:wrap;">
                                 <strong class="author-name-text">${escapeHtml(displayAuthor)}</strong>
                                 ${renderVerifiedBadge(followers)}
-                                <span style="color: var(--muted); font-size: 0.8rem;">${escapeHtml(postHandle)}</span>
+                                <span style="color: var(--muted); font-size: 0.78rem;">${escapeHtml(postHandle)}</span>
                             </span>
                         </button>
                         <span class="followers-chip">${followers} متابع</span>
                         ${shortItem ? `<span class="views-chip">👁 ${realViews}</span>` : ''}
-                        <span style="color: var(--muted); font-size: 0.8rem;">· ${timeStr}</span>
+                        <span style="color: var(--muted); font-size: 0.78rem;">· ${timeStr}</span>
                         <span class="comm-tag">r/${escapeHtml(post.community)}</span>
                         ${shortItem ? `<span class="short-badge">Short</span>` : ''}
                     </div>
@@ -2817,16 +3098,16 @@
                             <span class="heart-count-val">${Number(post.hearts) || 0}</span>
                         </button>
 
-                        <button type="button" class="react-pill" onclick="reactPost(${post.id}, 'like')"> ${r.like}</button>
-                        <button type="button" class="react-pill" onclick="reactPost(${post.id}, 'fire')"> ${r.fire}</button>
-                        <button type="button" class="react-pill" onclick="reactPost(${post.id}, 'haha')"> ${r.haha}</button>
+                        <button type="button" class="react-pill" onclick="reactPost(${post.id}, 'like')">👍 ${r.like}</button>
+                        <button type="button" class="react-pill" onclick="reactPost(${post.id}, 'fire')">🔥 ${r.fire}</button>
+                        <button type="button" class="react-pill" onclick="reactPost(${post.id}, 'haha')">😂 ${r.haha}</button>
                     </div>
 
                     <div class="reaction-group">
-                        <button type="button" class="react-pill" onclick="toggleComments(${post.id})"> ${post.comments.length}</button>
-                        <button type="button" class="react-pill" onclick="repost(${post.id})"> ${post.reposts || 0}</button>
+                        <button type="button" class="react-pill" onclick="toggleComments(${post.id})">💬 ${post.comments.length}</button>
+                        <button type="button" class="react-pill" onclick="repost(${post.id})">🔁 ${post.reposts || 0}</button>
                         <button type="button" class="react-pill" onclick="summarizePost(${post.id})">AI تلخيص</button>
-                        <button type="button" class="react-pill" onclick="toggleBookmark(${post.id})">${isBookmarked ? '' : ''}</button>
+                        <button type="button" class="react-pill" onclick="toggleBookmark(${post.id})">${isBookmarked ? '🔖' : '📑'}</button>
                     </div>
                 </div>
 
@@ -2841,7 +3122,7 @@
         `;
     }
 
-    function renderPosts(force = false) {
+    function renderPosts(forceRebuild = false) {
         renderTrendingHashtags();
         syncModeButtons();
 
@@ -2854,13 +3135,22 @@
         }
 
         const activeEl = document.activeElement;
-        const isTypingComment = activeEl && activeEl.id && (activeEl.id.startsWith('c-input-') || activeEl.id.startsWith('shortCommentInput-'));
-        if (isTypingComment && !force) return;
+        const isTypingInput = activeEl && activeEl.id && (
+            activeEl.id.startsWith('c-input-') ||
+            activeEl.id.startsWith('shortCommentInput-') ||
+            activeEl.id === 'dmMessageInput'
+        );
+        if (isTypingInput && !forceRebuild) return;
 
         const container = document.getElementById('feedContainer');
 
         if (currentView === 'shorts') {
-            renderShortsStage(container);
+            renderShortsStage(container, forceRebuild);
+            return;
+        }
+
+        if (currentView === 'dm') {
+            renderDmStage(container);
             return;
         }
 
@@ -2898,7 +3188,7 @@
         }
 
         if (list.length === 0) {
-            container.innerHTML = `<div style="text-align:center; padding:48px 20px; color:var(--muted); font-size:0.95rem;">لا توجد منشورات بعد.</div>`;
+            container.innerHTML = `<div style="text-align:center; padding:44px 18px; color:var(--muted); font-size:0.92rem;">لا توجد منشورات بعد.</div>`;
             return;
         }
 
@@ -2978,6 +3268,7 @@
         autoSaveMatchingHashtagVideos(optimisticPost);
         shortIndex = 0;
         reachedEndOfShorts = false;
+        activeShortId = null;
         lastFeedSignature = computeFeedSignature(posts);
         textarea.value = '';
         onComposerDraftInput();
@@ -3121,6 +3412,7 @@
             return;
         }
         posts = posts.filter(p => String(p.id) !== String(id));
+        if (String(activeShortId) === String(id)) activeShortId = null;
         lastFeedSignature = computeFeedSignature(posts);
         renderPosts(true);
         try {
@@ -3197,17 +3489,17 @@
 
         const postsListHtml = shownItems.length
             ? shownItems.map(p => `
-                <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:8px;">
-                    <div style="font-size:0.78rem;color:var(--muted);margin-bottom:4px;">r/${escapeHtml(p.community)} · ♥ ${Number(p.hearts) || 0}</div>
-                    <div style="font-size:0.9rem;line-height:1.55;white-space:pre-wrap;">${escapeHtml(p.content || (isShortPost(p) ? 'مقطع Short' : 'منشور وسائط'))}</div>
-                    ${p.mediaType === 'video' && p.mediaData ? `<video src="${p.mediaData}" controls style="width:100%;max-height:240px;border-radius:10px;margin-top:8px;"></video>` : ''}
+                <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:10px;margin-bottom:8px;">
+                    <div style="font-size:0.76rem;color:var(--muted);margin-bottom:4px;">r/${escapeHtml(p.community)} · ♥ ${Number(p.hearts) || 0}</div>
+                    <div style="font-size:0.88rem;line-height:1.5;white-space:pre-wrap;">${escapeHtml(p.content || (isShortPost(p) ? 'مقطع Short' : 'منشور وسائط'))}</div>
+                    ${p.mediaType === 'video' && p.mediaData ? `<video src="${p.mediaData}" controls style="width:100%;max-height:220px;border-radius:10px;margin-top:8px;"></video>` : ''}
                 </div>
             `).join('')
-            : `<div style="text-align:center;color:var(--muted);padding:20px;font-size:0.88rem;">${activeProfileTab === 'shorts' ? 'لا توجد مقاطع Short لهذا الحساب بعد.' : 'لا توجد تغريدات لهذا الحساب بعد.'}</div>`;
+            : `<div style="text-align:center;color:var(--muted);padding:18px;font-size:0.86rem;">${activeProfileTab === 'shorts' ? 'لا توجد مقاطع Short لهذا الحساب بعد.' : 'لا توجد تغريدات لهذا الحساب بعد.'}</div>`;
 
         container.innerHTML = `
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                <strong style="font-size:1rem;">الملف الشخصي</strong>
+                <strong style="font-size:0.98rem;">الملف الشخصي</strong>
                 <button type="button" class="react-pill" onclick="closeModal('profileModal')">✕</button>
             </div>
 
@@ -3217,29 +3509,29 @@
                 <div style="display:flex;align-items:flex-end;gap:10px;">
                     ${renderAvatar(displayName, displayAvatar, 'profile-avatar-lg')}
                     <div style="margin-bottom:4px;">
-                        <div style="font-size:1.08rem;font-weight:800;display:flex;align-items:center;gap:5px;">
+                        <div style="font-size:1.05rem;font-weight:800;display:flex;align-items:center;gap:5px;">
                             <span>${escapeHtml(displayName)}</span>
                             ${renderVerifiedBadge(followersNum)}
                         </div>
-                        <div style="font-size:0.82rem;color:var(--muted);">${escapeHtml(h)}</div>
+                        <div style="font-size:0.8rem;color:var(--muted);">${escapeHtml(h)}</div>
                     </div>
                 </div>
 
-                <div style="display:flex;gap:8px;align-items:center;">
+                <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
+                    ${h !== activeHandle ? `<button type="button" class="media-upload-btn" onclick="openDirectMessageWith('${escapeHtml(h)}')">✉️ خاص</button>` : ''}
                     <button type="button" class="icon-btn" onclick="toggleProfileNotify('${escapeHtml(h)}')" title="الإشعارات" style="${isNotified ? 'border-color:var(--accent);color:var(--accent);' : ''}">
                         <svg class="icon-svg" viewBox="0 0 24 24" fill="${isNotified ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2">
                             <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
                             <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
                         </svg>
                     </button>
-
                     <button type="button" class="follow-btn ${isFollowing ? 'following' : ''}" onclick="toggleProfileFollow('${escapeHtml(h)}')">
                         ${isFollowing ? 'متابَع' : 'متابعة'}
                     </button>
                 </div>
             </div>
 
-            <div style="display:flex;gap:14px;padding:0 8px 12px;border-bottom:1px solid var(--border);font-size:0.84rem;flex-wrap:wrap;">
+            <div style="display:flex;gap:12px;padding:0 8px 10px;border-bottom:1px solid var(--border);font-size:0.82rem;flex-wrap:wrap;">
                 <div><strong>${followersNum}</strong> <span style="color:var(--muted);">متابع</span></div>
                 <div><strong>${tweetItems.length}</strong> <span style="color:var(--muted);">تغريدة</span></div>
                 <div><strong>${shortItems.length}</strong> <span style="color:var(--muted);">Short</span></div>
@@ -3287,6 +3579,7 @@
                         ...data.user,
                         author: (data.user.author && data.user.author !== 'مستخدم') ? data.user.author : userInfo.author
                     };
+                    knownUsers[h] = { ...knownUsers[h], ...userInfo };
                 }
                 if (Array.isArray(data.posts)) userPosts = data.posts;
                 if (h === activeHandle && data.user) {
@@ -3482,8 +3775,11 @@
 
     document.addEventListener('visibilitychange', () => {
         if (!document.hidden) {
-            fetchPosts(true);
+            fetchPosts(false);
             syncCurrentUserFromServer();
+            if (currentView === 'dm' && activeDmPeer) {
+                loadDmConversation(activeDmPeer);
+            }
         }
     });
 
@@ -3492,7 +3788,7 @@
     syncCurrentUserFromServer();
     fetchPosts(true);
     connectRealtimeStream();
-    setInterval(() => fetchPosts(false), 3000);
+    setInterval(() => fetchPosts(false), 4500);
     playBootChime(false);
 </script>
 
